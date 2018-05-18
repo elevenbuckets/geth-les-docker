@@ -1,0 +1,4 @@
+1. start container
+2. setup ssh tunnel to port 8545 (geth rpc on localhost inside container):
+     ssh -L 8545:localhost:8545 -N -f -l eleven 172.17.0.2
+3. configure and start CastIron_UI, talking to geth rpc via ssh tunnel!
