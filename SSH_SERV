@@ -1,2 +1,2 @@
 ## Allows members of the users group to start ssh
-%eleven  ALL=(ALL)	NOPASSWD: /sbin/sshd -D
+%eleven  ALL=(ALL)	NOPASSWD: /sbin/sshd*
