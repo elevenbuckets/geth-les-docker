@@ -20,6 +20,10 @@ RUN groupadd -g 1000 eleven && \
 
 # limited sudoer
 COPY ./SSH_SERV /etc/sudoers.d/
+COPY ./sshd_config /etc/ssh/
+COPY ./run.sh /usr/bin/
+RUN chown root.root /etc/ssh/sshd_config && chmod 600 /etc/ssh/sshd_config && \
+    chown root.root /usr/bin/run.sh && chmod +x /usr/bin/run.sh
 
 # geth
 COPY ./geth*.tar.gz /usr/local/
