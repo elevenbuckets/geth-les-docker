@@ -12,11 +12,11 @@ if [ "$TASK" == "START" ]; then
 	  --syncmode=light --cache 1024 \
 	  --rpc --rpcapi "eth,net" \
 	  --maxpeers 50 -v5disc \
-	  --bootnodes=${BOOTNODE}
-else if [ "$TASK" == "INIT" ]; then
+	  --bootnodes=${BOOTNODE};
+elif [ "$TASK" == "INIT" ]; then
 	/usr/bin/geth \
 	  --datadir=${DATADIR} \
 	  init \
 	  /etc/rinkeby.json && \
-	/usr/bin/cp -f /etc/static-nodes.json ${DATADIR}/geth/
+	/usr/bin/cp -f /etc/static-nodes.json ${DATADIR}/geth/ ;
 fi
