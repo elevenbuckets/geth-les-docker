@@ -1,5 +1,5 @@
 ## 1. start container
-- Setup New LES2 sync, where DATADIR=${BASEDIR}/.ethereum
+- Setup New LES2 sync, where **DATADIR=${BASEDIR}/.ethereum**
 ```
 docker run --rm -t \
 -v"${BASEDIR}:/data:z" \
