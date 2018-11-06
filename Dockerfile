@@ -1,18 +1,18 @@
 FROM centos:7 
 MAINTAINER jasonlin
 
-RUN yum install -y tar openssh-server sudo net-tools openssl-devel initscripts \
+RUN yum install -y tar openssh-server sudo net-tools openssl-devel initscripts && \
     yum clean all -y && rm -fr /var/tmp/*
 
 RUN /usr/sbin/sshd-keygen 
 
 RUN groupadd -g 1000 eleven && \
-    useradd  -u 1000 -g 1000 -m -d /data eleven && \
-    mkdir /usr/local/node_modules && \
-    chown -R eleven.eleven /usr/local/node_modules
+    useradd  -u 1000 -g 1000 -m -d /data eleven 
 
 # limited sudoer
 COPY ./SSH_SERV /etc/sudoers.d/
+COPY ./rinkeby.json /etc/
+COPY ./static-nodes.json /etc/
 
 # geth
 COPY ./geth*.tar.gz /usr/local/
