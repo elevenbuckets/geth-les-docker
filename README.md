@@ -18,7 +18,9 @@ docker run --name "geth_stunnel_rinkeby_les2" \
 ```
 
 2. setup ssh tunnel to port 8545 (geth rpc on localhost inside container):
+  ```
      ssh -L 8545:localhost:8545 -N -f -l eleven ${container_ip_address}
+  ```
 
 3. configure and start CastIron_UI, talking to geth rpc via ssh tunnel!
 
