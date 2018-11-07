@@ -24,4 +24,4 @@ docker run --name "geth_stunnel_rinkeby_les2" \
 
 ## 3. configure and start CastIron_UI, talking to geth rpc via ssh tunnel!
 
-### Note: this is designed to be used by 11BE Dev Preview distribution, which comes with fully auto-mated container setup. 
+### Note: this is designed to be used by *11BE Dev Preview* distribution, which comes with fully automated container setup. 
